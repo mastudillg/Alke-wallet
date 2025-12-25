@@ -1,0 +1,143 @@
+/* =================================================
+   FONDO GENERAL
+   ================================================= */
+
+body {
+  min-height: 100vh;
+  margin: 0;
+
+  background-image: url("../img/fondo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* =================================================
+   CONTENIDO PRINCIPAL
+   ================================================= */
+
+main {
+  background-color: rgba(255, 255, 255, 0.92);
+  padding: 25px;
+  border-radius: 12px;
+  margin: 40px auto;
+  max-width: 900px;
+}
+
+/* =================================================
+   LOGIN
+   ================================================= */
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* =================================================
+   HEADER DEFINITIVO (PARA HEADER CON DIV.D-FLEX)
+   ================================================= */
+
+header {
+  width: 100%;
+  background-color: #e6f0ff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px 20px;
+  position: relative;
+}
+
+/* El nav ocupa el centro */
+header nav {
+  width: 100%;
+  max-width: 900px; /* mismo ancho que main */
+  display: flex;
+  justify-content: center;
+}
+
+/* CONTENEDOR REAL DE LOS BOTONES */
+header nav > div {
+  display: flex !important; /* sobreescribe d-flex */
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Botones del menú */
+header .btn-link {
+  color: #0d3b66;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 6px 12px;
+}
+
+/* Hover */
+header .btn-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Botón cerrar sesión */
+header > button {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* =================================================
+   MODAL (CONTACTOS)
+   ================================================= */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-contenido {
+  background-color: white;
+  width: 400px;
+  padding: 20px;
+  margin: 120px auto;
+  border-radius: 8px;
+}
+
+/* =================================================
+   RESPONSIVE (MÓVIL)
+   ================================================= */
+
+@media (max-width: 768px) {
+  header nav ul {
+    justify-content: space-between;
+  }
+
+  main {
+    margin: 20px;
+    padding: 20px;
+  }
+}
+/* =================================================
+   FIX FINAL PARA ÚLTIMOS MOVIMIENTOS (Y TODOS)
+   ================================================= */
+
+/* Forzamos que TODO lo que esté dentro del nav
+   se centre y use todo el ancho */
+header nav > * {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Si hay pocos botones, los repartimos mejor */
+header nav > * > * {
+  margin: 0 auto;
+}
