@@ -431,3 +431,22 @@ $(document).ready(function () {
     window.location.href = "sendmoney.html";
   });
 });
+/************************************************
+ * 🔒 PROTECCIÓN GLOBAL DE PÁGINAS PRIVADAS
+ ************************************************/
+
+$(document).ready(function () {
+  const paginasProtegidas = [
+    "menu.html",
+    "deposit.html",
+    "sendmoney.html",
+    "transactions.html",
+    "contacts.html",
+  ];
+
+  const paginaActual = window.location.pathname.split("/").pop();
+
+  if (paginasProtegidas.includes(paginaActual)) {
+    verificarSesion();
+  }
+});
