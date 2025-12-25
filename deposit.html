@@ -64,8 +64,14 @@
         </a>
       </form>
     </main>
-
+    <script>
+      if (!sessionStorage.getItem("login")) {
+        alert("Debe iniciar sesión primero");
+        window.location.href = "index.html";
+      }
+    </script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>
+
